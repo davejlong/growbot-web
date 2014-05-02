@@ -2,6 +2,12 @@
 
 Web app for my Growbot library.
 
+## What is Growbot?
+
+Growbot is a project I started to build a monitoring and management utility for
+growing coffee (or anything). It uses an Arduino board with sensors, Raspberry
+Pi and various open source technologies to track the environment for the coffee.
+
 ## Installation
 
 Checkout the repository and run `bundle install && bower install`
