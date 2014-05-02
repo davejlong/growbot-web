@@ -1,0 +1,28 @@
+@import 'bourbon/bourbon';
+@import 'neat/neat';
+@import 'bitters/bitters';
+
+@import 'refills/refills';
+
+@import 'widgets/widgets';
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+// Layout
+section {
+  @include outer-container;
+
+  main { @include span-columns(9); }
+  aside { @include span-columns(3); }
+}
+
+// Sections
+section {
+  .title {
+    border-bottom: 1px solid #eee;
+    margin-bottom: golden-ratio(15px, 1);
+  }
+}

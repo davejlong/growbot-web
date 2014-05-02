@@ -1,7 +1,6 @@
-require "growbot/web/version"
+require_relative 'web/version'
 
 module Growbot
   module Web
-    # Your code goes here...
   end
 end

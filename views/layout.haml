@@ -1,0 +1,17 @@
+%html(lang="en")
+  %head
+    %title Growbot
+    %link(href="/stylesheets/app.css" type="text/css" rel="stylesheet")
+  %body
+    %header.navigation
+      .menu-wrapper
+        %a.logo(href="/")
+          %img(src="https://raw.github.com/Magnus-G/Random/master/placeholder_logo_1.png")
+        %p#js-mobile-menu.navigation-menu-button MENU
+        .nav
+          %ul#navigation-menu
+            %li.take-reading
+              %a(href="javascript:void(0)") Read Sensors
+    = yield
+    %script(src="/vendor/jquery/dist/jquery.js")
+    %script(src="/javascripts/app.js")
