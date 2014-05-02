@@ -1,28 +1,18 @@
 # Growbot::Web
 
-TODO: Write a gem description
+Web app for my Growbot library.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'growbot-web'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install growbot-web
+Checkout the repository and run `bundle install && bower install`
 
 ## Usage
 
-TODO: Write usage instructions here
+Just run `rackup` and open your browser to http://localhost:9292
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/growbot-web/fork )
+1. Fork it ( https://github.com/davejlong/growbot-web/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
