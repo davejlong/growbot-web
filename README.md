@@ -10,7 +10,17 @@ Pi and various open source technologies to track the environment for the coffee.
 
 ## Installation
 
-Checkout the repository and run `bundle install && bower install`
+Add this line to your application's Gemfile:
+
+    gem 'growbot-web'
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install growbot-web
 
 ## Usage
 
