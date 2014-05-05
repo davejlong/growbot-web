@@ -26,3 +26,34 @@ section {
     margin-bottom: golden-ratio(15px, 1);
   }
 }
+
+// Flash messages
+div.notice { @extend %flash-notice; }
+div.success { @extend %flash-success; }
+div.error { @extend %flash-error; }
+
+// Charting
+
+path {
+  // stroke: $base-accent-color;
+  stroke-width: 1;
+  fill: none;
+}
+
+.axis {
+  shape-rendering: crispEdges;
+
+  text {
+    font-size: 10px;
+  }
+
+  line, path {
+    stroke: $light-gray;
+  }
+
+  &.x {
+    .minor {
+      stroke-opacity: 0.5;
+    }
+  }
+}

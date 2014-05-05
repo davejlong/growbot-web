@@ -1,7 +1,10 @@
 require 'sinatra/base'
+require 'sinatra/json'
+require 'yajl'
 
 require_relative '../web'
 require_relative 'env'
+require_relative 'data'
 
 module Growbot
   module Web
@@ -17,6 +20,10 @@ module Growbot
 
       get '/' do
         haml :index
+      end
+
+      get '/data.json' do
+        json Data.new.get
       end
 
       get '/stylesheets/:sheet.css' do

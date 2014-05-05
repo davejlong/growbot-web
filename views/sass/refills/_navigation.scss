@@ -25,8 +25,12 @@ header.navigation {
   .logo {
     float: left;
     max-height: $navigation-height;
-    padding-left: 1em;
     padding-right: 2em;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: $navigation-height;
+
 
     img {
       max-height: $navigation-height;
