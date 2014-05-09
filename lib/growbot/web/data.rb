@@ -10,7 +10,7 @@ module Growbot
       def get
         dataset = []
         query = <<-QUERY
-          FOR row in sensorReadings
+          FOR row in readings
             FILTER row.moisture != 0
             FILTER row.light != 0
             FILTER row.time >= #{start_time}
