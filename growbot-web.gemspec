@@ -17,15 +17,15 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'sinatra', '~> 1.4.5'
-  spec.add_runtime_dependency 'sinatra-contrib', ' ~> 1.4.2'
-  spec.add_runtime_dependency 'yajl-ruby', '~> 1.2.0'
+  spec.add_runtime_dependency 'sinatra', '~> 1.4'
+  spec.add_runtime_dependency 'sinatra-contrib', ' ~> 1.4'
+  spec.add_runtime_dependency 'yajl-ruby', '~> 1.2'
   spec.add_runtime_dependency 'ashikawa-core', '~> 0.10'
-  spec.add_runtime_dependency 'haml', '~> 4.0.5'
-  spec.add_runtime_dependency 'coffee-script', '~> 2.2.0'
-  spec.add_runtime_dependency 'bourbon', '~> 4.0.1'
-  spec.add_runtime_dependency 'neat', '~> 1.6.0'
-  spec.add_runtime_dependency 'bitters', '~> 0.9.3'
+  spec.add_runtime_dependency 'haml', '~> 4.0'
+  spec.add_runtime_dependency 'coffee-script', '~> 2.2'
+  spec.add_runtime_dependency 'bourbon', '~> 4.0'
+  spec.add_runtime_dependency 'neat', '~> 1.6'
+  spec.add_runtime_dependency 'bitters', '~> 0.9'
 
   spec.add_development_dependency 'bundler', '~> 1.6'
   spec.add_development_dependency 'rake'
