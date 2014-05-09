@@ -5,8 +5,6 @@
 
   menuToggle = $('#js-mobile-menu');
 
-  alert('Hello');
-
   menuToggle.on('click', function(e) {
     e.preventDefault();
     return menu.slideToggle(function() {

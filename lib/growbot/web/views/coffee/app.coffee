@@ -1,6 +1,6 @@
 menu = $('#navigation-menu')
 menuToggle = $('#js-mobile-menu')
-alert('Hello')
+
 menuToggle.on 'click', (e) ->
   e.preventDefault()
   menu.slideToggle () ->

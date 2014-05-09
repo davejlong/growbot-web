@@ -11,8 +11,6 @@ namespace :assets do
 
       Dir[source].each do |file|
         script = CoffeeScript.compile File.read(file)
-        puts file
-        puts File.basename(file)
         File.open File.join(dest, File.basename(file).gsub('.coffee', '.js')), 'w' do |f|
           f.puts script
         end
