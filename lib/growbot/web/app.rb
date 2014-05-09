@@ -3,7 +3,6 @@ require 'sinatra/json'
 require 'yajl'
 
 require_relative '../web'
-require_relative 'env'
 require_relative 'data'
 
 module Growbot
@@ -11,10 +10,23 @@ module Growbot
     class App < Sinatra::Base
       configure do
         set :root, File.expand_path(File.dirname(__FILE__))
-        set :public_folder, File.join(settings.root, 'public')
+
+        set :public_folder, File.join(settings.root, '..', '..', '..', 'public')
+
         set :haml, format: :html5, layout: :layout
-        set :scss, style: :expanded, views: File.join(settings.root, 'views/sass')
-        set :coffee, views: File.join(settings.root, 'views/coffee')
+        set :scss, views: File.join(settings.root, 'views/sass')
+        if ENV['RACK_ENV'].eql? 'production'
+          set :scss, style: :compressed,
+            cache: true,
+            cache_location: '/tmp/growbot-sass-cache'
+        else
+          set :scss, style: :expanded
+        end
+
+        set :coffee, views: File.join(settings.root, 'views/coffee'),
+          cache: true,
+          cache_location: '/tmp/growbot-coffee-cache'
+
       end
 
       get '/' do

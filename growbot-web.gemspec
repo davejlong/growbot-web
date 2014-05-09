@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['David Long']
   spec.email         = ['dave@davejlong.com']
   spec.summary       = %q{Web client to display Growbot metrics}
-  spec.homepage      = ''
+  spec.homepage      = 'http://github.com/davejlong/growbot-web'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")

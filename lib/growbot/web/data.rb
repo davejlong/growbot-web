@@ -25,7 +25,7 @@ module Growbot
 
       private
       def start_time
-        (Time.now - 24*60*60).to_i * 1000
+        (Time.now - 6*24*60*60).to_i * 1000
       end
 
       def database
@@ -35,7 +35,7 @@ module Growbot
       end
 
       def collection
-        @collection ||= database[:sensorReadings]
+        @collection ||= database[:readings]
       end
     end
   end
