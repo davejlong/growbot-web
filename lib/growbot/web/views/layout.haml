@@ -1,7 +1,8 @@
 %html(lang="en")
   %head
+    %meta(charset="utf-8")
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
     %title Growbot
-    %link(href="/vendor/colorbrewer/colorbrewer.css" type="text/css" rel="stylesheet")
     %link(href="/vendor/normalize-css/normalize.css" type="text/css" rel="stylesheet")
     %link(href="/stylesheets/app.css" type="text/css" rel="stylesheet")
   %body
@@ -17,5 +18,4 @@
     = yield
     %script(src="/vendor/jquery/dist/jquery.js")
     %script(src="/vendor/d3/d3.js")
-    %script(src="/vendor/colorbrewer/colorbrewer.js")
     %script(src="/javascripts/app.js")

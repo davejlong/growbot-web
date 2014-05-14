@@ -37,3 +37,8 @@ namespace :assets do
   desc "Compile all static assets (CSS and JS) from source"
   task :compile => ['js:compile', 'css:compile']
 end
+
+# desc "Bump the Gem version"
+# task :bump do
+#   File.open File.join(File.dirname(__FILE__), 'lib', 'growbot', 'web', 'version.rb')
+# end
