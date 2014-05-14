@@ -1,6 +1,5 @@
 menu = $('#navigation-menu')
 menuToggle = $('#js-mobile-menu')
-alert('Hello')
 menuToggle.on 'click', (e) ->
   e.preventDefault()
   menu.slideToggle () ->
@@ -19,12 +18,13 @@ displayError = () ->
 
 drawAverages = (rawData) ->
   # Reduce down the data to build averages
-  hourAgo = new Date()
-  hourAgo.setHours hourAgo.getHours()-1
+  # hourAgo = new Date()
+  # hourAgo.setHours hourAgo.getHours()-1
 
 
-  data = rawData.filter (d) -> d.time >= hourAgo
-  return unless data.length
+  # data = rawData.filter (d) -> d.time >= hourAgo
+  # return unless data.length
+  data = rawData
 
   totalLevels = data.reduce ((p, c) ->
     p.moisture += c.moisture
@@ -41,37 +41,6 @@ drawAverages = (rawData) ->
 
 getContainerWidth = (container) ->
   $(container).innerWidth()
-
-drawLine = (data, container, xKey='x', yKey='y', scales) ->
-  width = getContainerWidth(container)
-  m = [15, 80, 15, 80] # Margins
-  w = width - m[1] - m[3] # Width
-  h = 400 - m[0] - m[2] # Height
-  # Create the initial chart to work with
-  chart = d3.select(container).append('svg')
-    .attr('width', w + m[1] + m[3]).attr('height', h + m[0] + m[1])
-    .append('g')
-    .attr('transform', "translate(#{m[3]}, #{m[0]})")
-
-  scales.x.range([0, w])
-  scales.y.range([0, h])
-
-  xAxis = d3.svg.axis().scale(scales.x)
-  yAxis = d3.svg.axis().scale(scales.y).orient('left')
-  chart.append('g').attr('class', 'x axis')
-    .attr('transform', "translate(0, #{h})")
-    .call(xAxis)
-  chart.append('g').attr('class', 'y axis')
-    .attr('transform', "translate(0, 0)")
-    .call(yAxis)
-
-  line = d3.svg.line()
-    .x((d) -> scales.x(d[xKey]))
-    .y((d) -> scales.y(d[yKey]))
-    # .interpolate('cardinal')
-
-  chart.append('path').attr('d', line(data))
-
 
 d3.json('/data.json')
   .get (error, data) ->
@@ -90,9 +59,8 @@ d3.json('/data.json')
 
     drawAverages(data)
 
-
     width = getContainerWidth('#lineChart')
-    m = [15, 80, 15, 80] # Margins
+    m = [10, 25, 0, 40] # Margins [top
     w = width - m[1] - m[3] # Width
     h = 300 - m[0] - m[2] # Height
 
@@ -126,6 +94,5 @@ d3.json('/data.json')
       .y((d) -> scales.y(d.light))
 
     colorScale = d3.scale.category10()
-    console.log(colorScale)
     chart.append('path').attr('d', moistureLine(data)).style('stroke', colorScale(0))
     chart.append('path').attr('d', lightLine(data)).style('stroke', colorScale(1))

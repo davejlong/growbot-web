@@ -3,15 +3,16 @@
 
   border: 2px solid $medium-gray;
   background: $dark-gray;
-  border-radius: 1em;
-  padding: 0.8em 0;
+  border-radius: em(16);
+  padding: em(16) 0;
 
+  margin-top: em(10);
 
   text-align: center;
   .number {
-    font-size: 3.5em;
+    font-size: em(50);
     font-weight: 800;
-    line-height: 0.8em;
+    line-height: em(16);
     color: $stats-color;
   }
   .label {
