@@ -27,7 +27,7 @@ namespace :assets do
       Dir.mkdir dest unless Dir.exist? dest
 
       Dir[source].each do |file|
-        spawn "sass #{file}:#{File.join(dest, File.basename(file).gsub('.scss', '.css'))} --style compressed"
+        sh "sass #{file}:#{File.join(dest, File.basename(file).gsub('.scss', '.css'))} --style compressed"
       end
     end
   end

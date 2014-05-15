@@ -14,6 +14,7 @@ module Growbot
             FILTER row.moisture != 0
             FILTER row.light != 0
             FILTER row.time >= #{start_time}
+            FILTER row.time <= #{end_time}
             SORT row.time ASC
             RETURN row
         QUERY
@@ -26,6 +27,10 @@ module Growbot
       private
       def start_time
         (Time.now - 6*24*60*60).to_i * 1000
+      end
+
+      def end_time
+        (Time.now - 4*24*60*60).to_i * 1000
       end
 
       def database
