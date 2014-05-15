@@ -1,0 +1,23 @@
+{
+  "name": "growbot-web",
+  "version": "0.0.0",
+  "description": "Web app for my Growbot library.",
+  "scripts": {
+    "test": "mocha --compilers coffee:coffee-script/register --ui bdd --reporter nyan --require spec/javascripts/spec_helper.coffee spec/javascripts/**/*spec.coffee",
+    "test-watch": "mocha --watch --compilers coffee:coffee-script/register --ui bdd --reporter nyan --require spec/javascripts/spec_helper.coffee spec/javascripts/**/*spec.coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/davejlong/growbot-web.git"
+  },
+  "author": "Dave Long <dave@davejlong.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davejlong/growbot-web/issues"
+  },
+  "homepage": "https://github.com/davejlong/growbot-web",
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "mocha": "^1.18.2"
+  }
+}

@@ -11,8 +11,6 @@ namespace :assets do
 
       Dir[source].each do |file|
         script = CoffeeScript.compile File.read(file)
-        puts file
-        puts File.basename(file)
         File.open File.join(dest, File.basename(file).gsub('.coffee', '.js')), 'w' do |f|
           f.puts script
         end
@@ -29,7 +27,7 @@ namespace :assets do
       Dir.mkdir dest unless Dir.exist? dest
 
       Dir[source].each do |file|
-        spawn "sass #{file}:#{File.join(dest, File.basename(file).gsub('.scss', '.css'))} --style compressed"
+        sh "sass #{file}:#{File.join(dest, File.basename(file).gsub('.scss', '.css'))} --style compressed"
       end
     end
   end
@@ -37,8 +35,3 @@ namespace :assets do
   desc "Compile all static assets (CSS and JS) from source"
   task :compile => ['js:compile', 'css:compile']
 end
-
-# desc "Bump the Gem version"
-# task :bump do
-#   File.open File.join(File.dirname(__FILE__), 'lib', 'growbot', 'web', 'version.rb')
-# end
